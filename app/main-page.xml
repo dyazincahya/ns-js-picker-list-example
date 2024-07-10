@@ -1,0 +1,24 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:picker="@nativescript/picker" navigatingTo="onNavigatingTo">
+    <ActionBar title="My App" icon="" />
+    <StackLayout class="p-4">
+        <picker:PickerField
+            class='form-input'
+            focusOnShow="true"
+            filterKeyName="name"
+            showFilter="true"
+            pickerTitle="Daftar Unit Kerja"
+            rowHeight="60"
+            hintText="Pilih Salah Satu..."
+            textField="name"
+            valueField="id"
+            items="{{ items_unit }}"
+            pickerClosed="{{ onSelectedItem }}"
+            >
+            <picker:PickerField.itemTemplate>
+                <GridLayout height="60">
+                <Label text="{{ name }}" textWrap="true" verticalAlignment="center" />
+                </GridLayout>
+            </picker:PickerField.itemTemplate>
+        </picker:PickerField>
+    </StackLayout>
+</Page>
